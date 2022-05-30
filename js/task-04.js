@@ -11,7 +11,7 @@
 
 
 
-const value = document.getElementById("#value");
+const value = document.querySelector("#value");
 const decButton = document.querySelector('button[data-action="decrement"]');
 const incButton = document.querySelector('button[data-action="increment"]');
 
@@ -20,11 +20,13 @@ incButton.addEventListener('click', onIncButtonClick);
   let counterValue = 0;
 function onDecButtonClick() {
     counterValue -= 1;
-    console.log(counterValue);
+  console.log(counterValue);
+  value.textContent = counterValue;
 };
 
 function onIncButtonClick() {
     counterValue++;
-    console.log(counterValue);
+  console.log(counterValue);
+  value.textContent = counterValue;
 }
  
