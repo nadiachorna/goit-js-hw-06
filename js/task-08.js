@@ -7,8 +7,6 @@
 // Виведи об'єкт із введеними даними в консоль і очисти значення полів форми методом reset.
 
 const form = document.querySelector('.login-form');
-const emailEl = document.querySelector('input[type="email"]');
-const passwordEl = document.querySelector('input[type="password"]');
 
 form.addEventListener("submit", onFormSubmit);
 
@@ -20,15 +18,16 @@ let user = {
 function onFormSubmit (event) {
     event.preventDefault();
  
-  if (emailEl.value === "" || passwordEl.value === "") {
-    return console.log("Please fill in all the fields!");
+  if (event.currentTarget.elements.email.value === "" || event.currentTarget.elements.password.value === "") {
+    alert("Please fill in all the fields!");
   }
   else {
-      user.email = emailEl.value;
-      user.password = passwordEl.value;
+      user.email = event.currentTarget.elements.email.value;
+      user.password = event.currentTarget.elements.password.value;
     }
       
     event.currentTarget.reset();
 
-    console.log(user);
+  console.log(user)
+  
 }
