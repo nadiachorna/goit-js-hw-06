@@ -8,14 +8,19 @@
 const input = document.querySelector('#validation-input');
 const dataLength = input.getAttribute('data-length');
 
+console.log(dataLength)
+
 input.addEventListener('blur', (event) => {
-    if (event.currentTarget.length = dataLength) {
-        input.classList.remove('invalid');
-        input.classList.add('valid');
+    let inputValue = event.currentTarget.value.length;
+    console.log(inputValue)
+    
+    if (inputValue > dataLength || inputValue < dataLength) {
+        input.classList.remove('valid');
+        input.classList.add('invalid');
     }
     else {
-     input.classList.remove('valid');
-        input.classList.add('invalid');
+     input.classList.remove('invalid');
+        input.classList.add('valid');
     }  
  
 });
